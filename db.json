@@ -1,0 +1,45 @@
+{
+  "topics": [
+    { "id": "1", "name": "Food and Drinks", "description": "Đồ ăn và thức uống", "imageUrl": "" },
+    { "id": "2", "name": "Travel", "description": "Du lịch và di chuyển", "imageUrl": "" },
+    { "id": "3", "name": "Education", "description": "Trường học và học tập", "imageUrl": "" }
+  ],
+  "words": [
+    { "id": "1", "topicId": "1", "word": "apple", "meaning": "quả táo", "phonetic": "/ˈæp.əl/", "partOfSpeech": "noun", "example": "I eat an apple every day.", "exampleTranslation": "Tôi ăn một quả táo mỗi ngày.", "level": "A1", "imageUrl": "", "audioUrl": "" },
+    { "id": "2", "topicId": "1", "word": "bread", "meaning": "bánh mì", "phonetic": "/bred/", "partOfSpeech": "noun", "example": "She buys bread for breakfast.", "exampleTranslation": "Cô ấy mua bánh mì cho bữa sáng.", "level": "A1", "imageUrl": "", "audioUrl": "" },
+    { "id": "3", "topicId": "1", "word": "water", "meaning": "nước", "phonetic": "/ˈwɔː.tər/", "partOfSpeech": "noun", "example": "Please drink some water.", "exampleTranslation": "Hãy uống một ít nước.", "level": "A1", "imageUrl": "", "audioUrl": "" },
+    { "id": "4", "topicId": "1", "word": "delicious", "meaning": "ngon", "phonetic": "/dɪˈlɪʃ.əs/", "partOfSpeech": "adjective", "example": "This soup is delicious.", "exampleTranslation": "Món súp này rất ngon.", "level": "A2", "imageUrl": "", "audioUrl": "" },
+    { "id": "5", "topicId": "2", "word": "airport", "meaning": "sân bay", "phonetic": "/ˈeə.pɔːt/", "partOfSpeech": "noun", "example": "We arrive at the airport early.", "exampleTranslation": "Chúng tôi đến sân bay sớm.", "level": "A1", "imageUrl": "", "audioUrl": "" },
+    { "id": "6", "topicId": "2", "word": "ticket", "meaning": "vé", "phonetic": "/ˈtɪk.ɪt/", "partOfSpeech": "noun", "example": "I need a train ticket.", "exampleTranslation": "Tôi cần một vé tàu.", "level": "A1", "imageUrl": "", "audioUrl": "" },
+    { "id": "7", "topicId": "2", "word": "journey", "meaning": "chuyến đi", "phonetic": "/ˈdʒɜː.ni/", "partOfSpeech": "noun", "example": "The journey takes two hours.", "exampleTranslation": "Chuyến đi mất hai giờ.", "level": "A2", "imageUrl": "", "audioUrl": "" },
+    { "id": "8", "topicId": "2", "word": "explore", "meaning": "khám phá", "phonetic": "/ɪkˈsplɔːr/", "partOfSpeech": "verb", "example": "We want to explore the city.", "exampleTranslation": "Chúng tôi muốn khám phá thành phố.", "level": "B1", "imageUrl": "", "audioUrl": "" },
+    { "id": "9", "topicId": "3", "word": "student", "meaning": "học sinh, sinh viên", "phonetic": "/ˈstjuː.dənt/", "partOfSpeech": "noun", "example": "He is a university student.", "exampleTranslation": "Anh ấy là sinh viên đại học.", "level": "A1", "imageUrl": "", "audioUrl": "" },
+    { "id": "10", "topicId": "3", "word": "homework", "meaning": "bài tập về nhà", "phonetic": "/ˈhəʊm.wɜːk/", "partOfSpeech": "noun", "example": "I do my homework after dinner.", "exampleTranslation": "Tôi làm bài tập về nhà sau bữa tối.", "level": "A1", "imageUrl": "", "audioUrl": "" },
+    { "id": "11", "topicId": "3", "word": "improve", "meaning": "cải thiện", "phonetic": "/ɪmˈpruːv/", "partOfSpeech": "verb", "example": "Practice helps you improve your English.", "exampleTranslation": "Luyện tập giúp bạn cải thiện tiếng Anh.", "level": "A2", "imageUrl": "", "audioUrl": "" },
+    { "id": "12", "topicId": "3", "word": "knowledge", "meaning": "kiến thức", "phonetic": "/ˈnɒl.ɪdʒ/", "partOfSpeech": "noun", "example": "Reading expands your knowledge.", "exampleTranslation": "Đọc sách mở rộng kiến thức của bạn.", "level": "B1", "imageUrl": "", "audioUrl": "" }
+  ],
+  "questions": [
+    { "id": "1", "wordId": "1", "prompt": "Từ apple có nghĩa là gì?", "options": ["quả cam", "quả táo", "quả chuối", "quả nho"], "correctAnswer": "quả táo", "explanation": "Apple là danh từ, có nghĩa là quả táo." },
+    { "id": "2", "wordId": "4", "prompt": "Chọn từ thích hợp: This soup is ___.", "options": ["delicious", "airport", "student", "ticket"], "correctAnswer": "delicious", "explanation": "Delicious là tính từ, có nghĩa là ngon." },
+    { "id": "3", "wordId": "5", "prompt": "Từ nào có nghĩa là sân bay?", "options": ["ticket", "journey", "airport", "bread"], "correctAnswer": "airport", "explanation": "Airport có nghĩa là sân bay." },
+    { "id": "4", "wordId": "8", "prompt": "Từ explore có nghĩa là gì?", "options": ["cải thiện", "mua vé", "học tập", "khám phá"], "correctAnswer": "khám phá", "explanation": "Explore là động từ, có nghĩa là khám phá." },
+    { "id": "5", "wordId": "10", "prompt": "Từ nào có nghĩa là bài tập về nhà?", "options": ["knowledge", "homework", "student", "water"], "correctAnswer": "homework", "explanation": "Homework có nghĩa là bài tập về nhà." },
+    { "id": "6", "wordId": "11", "prompt": "Chọn từ thích hợp: Practice helps you ___ your English.", "options": ["improve", "bread", "ticket", "knowledge"], "correctAnswer": "improve", "explanation": "Improve your English có nghĩa là cải thiện tiếng Anh của bạn." }
+  ],
+  "learningProgress": [
+    { "id": "1", "wordId": "1", "status": "mastered", "isFavorite": true, "reviewCount": 5, "lastReviewedAt": "2026-10-24T02:00:00.000Z" },
+    { "id": "2", "wordId": "4", "status": "learning", "isFavorite": false, "reviewCount": 2, "lastReviewedAt": "2026-10-24T02:05:00.000Z" },
+    { "id": "3", "wordId": "5", "status": "learning", "isFavorite": true, "reviewCount": 1, "lastReviewedAt": "2026-10-24T02:10:00.000Z" }
+  ],
+  "quizAttempts": [
+    {
+      "id": "1",
+      "topicId": "1",
+      "completedAt": "2026-10-24T02:15:00.000Z",
+      "answers": [
+        { "questionId": "1", "prompt": "Từ apple có nghĩa là gì?", "selectedAnswer": "quả táo", "correctAnswer": "quả táo" },
+        { "questionId": "2", "prompt": "Chọn từ thích hợp: This soup is ___.", "selectedAnswer": "student", "correctAnswer": "delicious" }
+      ]
+    }
+  ]
+}
