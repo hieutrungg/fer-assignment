@@ -1,35 +1,1679 @@
 {
   "topics": [
-    { "id": "1", "name": "Food and Drinks", "description": "Đồ ăn và thức uống", "imageUrl": "" },
-    { "id": "2", "name": "Travel", "description": "Du lịch và di chuyển", "imageUrl": "" },
-    { "id": "3", "name": "Education", "description": "Trường học và học tập", "imageUrl": "" }
+    {
+      "id": "1",
+      "name": "Food and Drinks",
+      "description": "Đồ ăn và thức uống",
+      "imageUrl": ""
+    },
+    {
+      "id": "2",
+      "name": "Travel",
+      "description": "Du lịch và di chuyển",
+      "imageUrl": ""
+    },
+    {
+      "id": "3",
+      "name": "Education",
+      "description": "Trường học và học tập",
+      "imageUrl": ""
+    }
   ],
   "words": [
-    { "id": "1", "topicId": "1", "word": "apple", "meaning": "quả táo", "phonetic": "/ˈæp.əl/", "partOfSpeech": "noun", "example": "I eat an apple every day.", "exampleTranslation": "Tôi ăn một quả táo mỗi ngày.", "level": "A1", "imageUrl": "", "audioUrl": "" },
-    { "id": "2", "topicId": "1", "word": "bread", "meaning": "bánh mì", "phonetic": "/bred/", "partOfSpeech": "noun", "example": "She buys bread for breakfast.", "exampleTranslation": "Cô ấy mua bánh mì cho bữa sáng.", "level": "A1", "imageUrl": "", "audioUrl": "" },
-    { "id": "3", "topicId": "1", "word": "water", "meaning": "nước", "phonetic": "/ˈwɔː.tər/", "partOfSpeech": "noun", "example": "Please drink some water.", "exampleTranslation": "Hãy uống một ít nước.", "level": "A1", "imageUrl": "", "audioUrl": "" },
-    { "id": "4", "topicId": "1", "word": "delicious", "meaning": "ngon", "phonetic": "/dɪˈlɪʃ.əs/", "partOfSpeech": "adjective", "example": "This soup is delicious.", "exampleTranslation": "Món súp này rất ngon.", "level": "A2", "imageUrl": "", "audioUrl": "" },
-    { "id": "5", "topicId": "2", "word": "airport", "meaning": "sân bay", "phonetic": "/ˈeə.pɔːt/", "partOfSpeech": "noun", "example": "We arrive at the airport early.", "exampleTranslation": "Chúng tôi đến sân bay sớm.", "level": "A1", "imageUrl": "", "audioUrl": "" },
-    { "id": "6", "topicId": "2", "word": "ticket", "meaning": "vé", "phonetic": "/ˈtɪk.ɪt/", "partOfSpeech": "noun", "example": "I need a train ticket.", "exampleTranslation": "Tôi cần một vé tàu.", "level": "A1", "imageUrl": "", "audioUrl": "" },
-    { "id": "7", "topicId": "2", "word": "journey", "meaning": "chuyến đi", "phonetic": "/ˈdʒɜː.ni/", "partOfSpeech": "noun", "example": "The journey takes two hours.", "exampleTranslation": "Chuyến đi mất hai giờ.", "level": "A2", "imageUrl": "", "audioUrl": "" },
-    { "id": "8", "topicId": "2", "word": "explore", "meaning": "khám phá", "phonetic": "/ɪkˈsplɔːr/", "partOfSpeech": "verb", "example": "We want to explore the city.", "exampleTranslation": "Chúng tôi muốn khám phá thành phố.", "level": "B1", "imageUrl": "", "audioUrl": "" },
-    { "id": "9", "topicId": "3", "word": "student", "meaning": "học sinh, sinh viên", "phonetic": "/ˈstjuː.dənt/", "partOfSpeech": "noun", "example": "He is a university student.", "exampleTranslation": "Anh ấy là sinh viên đại học.", "level": "A1", "imageUrl": "", "audioUrl": "" },
-    { "id": "10", "topicId": "3", "word": "homework", "meaning": "bài tập về nhà", "phonetic": "/ˈhəʊm.wɜːk/", "partOfSpeech": "noun", "example": "I do my homework after dinner.", "exampleTranslation": "Tôi làm bài tập về nhà sau bữa tối.", "level": "A1", "imageUrl": "", "audioUrl": "" },
-    { "id": "11", "topicId": "3", "word": "improve", "meaning": "cải thiện", "phonetic": "/ɪmˈpruːv/", "partOfSpeech": "verb", "example": "Practice helps you improve your English.", "exampleTranslation": "Luyện tập giúp bạn cải thiện tiếng Anh.", "level": "A2", "imageUrl": "", "audioUrl": "" },
-    { "id": "12", "topicId": "3", "word": "knowledge", "meaning": "kiến thức", "phonetic": "/ˈnɒl.ɪdʒ/", "partOfSpeech": "noun", "example": "Reading expands your knowledge.", "exampleTranslation": "Đọc sách mở rộng kiến thức của bạn.", "level": "B1", "imageUrl": "", "audioUrl": "" }
+    {
+      "id": "1",
+      "topicId": "1",
+      "word": "apple",
+      "meaning": "quả táo",
+      "phonetic": "/ˈæp.əl/",
+      "partOfSpeech": "noun",
+      "example": "I eat an apple every day.",
+      "exampleTranslation": "Tôi ăn một quả táo mỗi ngày.",
+      "level": "A1",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "2",
+      "topicId": "1",
+      "word": "bread",
+      "meaning": "bánh mì",
+      "phonetic": "/bred/",
+      "partOfSpeech": "noun",
+      "example": "She buys bread for breakfast.",
+      "exampleTranslation": "Cô ấy mua bánh mì cho bữa sáng.",
+      "level": "A1",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "3",
+      "topicId": "1",
+      "word": "water",
+      "meaning": "nước",
+      "phonetic": "/ˈwɔː.tər/",
+      "partOfSpeech": "noun",
+      "example": "Please drink some water.",
+      "exampleTranslation": "Hãy uống một ít nước.",
+      "level": "A1",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "4",
+      "topicId": "1",
+      "word": "delicious",
+      "meaning": "ngon",
+      "phonetic": "/dɪˈlɪʃ.əs/",
+      "partOfSpeech": "adjective",
+      "example": "This soup is delicious.",
+      "exampleTranslation": "Món súp này rất ngon.",
+      "level": "A2",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "5",
+      "topicId": "2",
+      "word": "airport",
+      "meaning": "sân bay",
+      "phonetic": "/ˈeə.pɔːt/",
+      "partOfSpeech": "noun",
+      "example": "We arrive at the airport early.",
+      "exampleTranslation": "Chúng tôi đến sân bay sớm.",
+      "level": "A1",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "6",
+      "topicId": "2",
+      "word": "ticket",
+      "meaning": "vé",
+      "phonetic": "/ˈtɪk.ɪt/",
+      "partOfSpeech": "noun",
+      "example": "I need a train ticket.",
+      "exampleTranslation": "Tôi cần một vé tàu.",
+      "level": "A1",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "7",
+      "topicId": "2",
+      "word": "journey",
+      "meaning": "chuyến đi",
+      "phonetic": "/ˈdʒɜː.ni/",
+      "partOfSpeech": "noun",
+      "example": "The journey takes two hours.",
+      "exampleTranslation": "Chuyến đi mất hai giờ.",
+      "level": "A2",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "8",
+      "topicId": "2",
+      "word": "explore",
+      "meaning": "khám phá",
+      "phonetic": "/ɪkˈsplɔːr/",
+      "partOfSpeech": "verb",
+      "example": "We want to explore the city.",
+      "exampleTranslation": "Chúng tôi muốn khám phá thành phố.",
+      "level": "B1",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "9",
+      "topicId": "3",
+      "word": "student",
+      "meaning": "học sinh, sinh viên",
+      "phonetic": "/ˈstjuː.dənt/",
+      "partOfSpeech": "noun",
+      "example": "He is a university student.",
+      "exampleTranslation": "Anh ấy là sinh viên đại học.",
+      "level": "A1",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "10",
+      "topicId": "3",
+      "word": "homework",
+      "meaning": "bài tập về nhà",
+      "phonetic": "/ˈhəʊm.wɜːk/",
+      "partOfSpeech": "noun",
+      "example": "I do my homework after dinner.",
+      "exampleTranslation": "Tôi làm bài tập về nhà sau bữa tối.",
+      "level": "A1",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "11",
+      "topicId": "3",
+      "word": "improve",
+      "meaning": "cải thiện",
+      "phonetic": "/ɪmˈpruːv/",
+      "partOfSpeech": "verb",
+      "example": "Practice helps you improve your English.",
+      "exampleTranslation": "Luyện tập giúp bạn cải thiện tiếng Anh.",
+      "level": "A2",
+      "imageUrl": "",
+      "audioUrl": ""
+    },
+    {
+      "id": "12",
+      "topicId": "3",
+      "word": "knowledge",
+      "meaning": "kiến thức",
+      "phonetic": "/ˈnɒl.ɪdʒ/",
+      "partOfSpeech": "noun",
+      "example": "Reading expands your knowledge.",
+      "exampleTranslation": "Đọc sách mở rộng kiến thức của bạn.",
+      "level": "B1",
+      "imageUrl": "",
+      "audioUrl": ""
+    }
   ],
-  "questions": [
-    { "id": "1", "wordId": "1", "prompt": "Từ apple có nghĩa là gì?", "options": ["quả cam", "quả táo", "quả chuối", "quả nho"], "correctAnswer": "quả táo", "explanation": "Apple là danh từ, có nghĩa là quả táo." },
-    { "id": "2", "wordId": "4", "prompt": "Chọn từ thích hợp: This soup is ___.", "options": ["delicious", "airport", "student", "ticket"], "correctAnswer": "delicious", "explanation": "Delicious là tính từ, có nghĩa là ngon." },
-    { "id": "3", "wordId": "5", "prompt": "Từ nào có nghĩa là sân bay?", "options": ["ticket", "journey", "airport", "bread"], "correctAnswer": "airport", "explanation": "Airport có nghĩa là sân bay." },
-    { "id": "4", "wordId": "8", "prompt": "Từ explore có nghĩa là gì?", "options": ["cải thiện", "mua vé", "học tập", "khám phá"], "correctAnswer": "khám phá", "explanation": "Explore là động từ, có nghĩa là khám phá." },
-    { "id": "5", "wordId": "10", "prompt": "Từ nào có nghĩa là bài tập về nhà?", "options": ["knowledge", "homework", "student", "water"], "correctAnswer": "homework", "explanation": "Homework có nghĩa là bài tập về nhà." },
-    { "id": "6", "wordId": "11", "prompt": "Chọn từ thích hợp: Practice helps you ___ your English.", "options": ["improve", "bread", "ticket", "knowledge"], "correctAnswer": "improve", "explanation": "Improve your English có nghĩa là cải thiện tiếng Anh của bạn." }
+  "learners": [
+    {
+      "id": "learner-1",
+      "displayName": "Linh",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "learner-2",
+      "displayName": "Minh",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "learner-3",
+      "displayName": "An",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "learner-4",
+      "displayName": "Bao",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "learner-5",
+      "displayName": "Chi",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "learner-6",
+      "displayName": "Nam",
+      "status": "INACTIVE"
+    }
+  ],
+  "decks": [
+    {
+      "id": "deck-1",
+      "topicId": "1",
+      "name": "Food and Drinks: Essentials",
+      "status": "OPEN",
+      "wordIds": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "members": [
+        {
+          "learnerId": "learner-1",
+          "status": "joined"
+        },
+        {
+          "learnerId": "learner-2",
+          "status": "joined"
+        },
+        {
+          "learnerId": "learner-3",
+          "status": "left"
+        },
+        {
+          "learnerId": "learner-4",
+          "status": "joined"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "topicId": "2",
+      "name": "Travel: On the Move",
+      "status": "OPEN",
+      "wordIds": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "members": [
+        {
+          "learnerId": "learner-1",
+          "status": "joined"
+        },
+        {
+          "learnerId": "learner-3",
+          "status": "joined"
+        },
+        {
+          "learnerId": "learner-5",
+          "status": "joined"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "topicId": "3",
+      "name": "Education: Study Time",
+      "status": "OPEN",
+      "wordIds": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "members": [
+        {
+          "learnerId": "learner-2",
+          "status": "joined"
+        },
+        {
+          "learnerId": "learner-4",
+          "status": "joined"
+        },
+        {
+          "learnerId": "learner-5",
+          "status": "joined"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "topicId": "2",
+      "name": "Travel: Advanced Review",
+      "status": "CLOSED",
+      "wordIds": [
+        "7",
+        "8"
+      ],
+      "members": [
+        {
+          "learnerId": "learner-1",
+          "status": "left"
+        },
+        {
+          "learnerId": "learner-3",
+          "status": "joined"
+        },
+        {
+          "learnerId": "learner-6",
+          "status": "joined"
+        }
+      ]
+    }
+  ],
+  "reviewLogs": [
+    {
+      "id": "review-1",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "1",
+      "reviewedAt": "2026-10-20T02:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-2",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "1",
+      "reviewedAt": "2026-10-21T02:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-3",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "1",
+      "reviewedAt": "2026-10-22T02:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-4",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "1",
+      "reviewedAt": "2026-10-23T02:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-5",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "1",
+      "reviewedAt": "2026-10-24T02:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-6",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "4",
+      "reviewedAt": "2026-10-23T02:05:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-7",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "4",
+      "reviewedAt": "2026-10-24T02:05:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-8",
+      "deckId": "deck-2",
+      "learnerId": "learner-1",
+      "wordId": "5",
+      "reviewedAt": "2026-10-24T02:10:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-9",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "2",
+      "reviewedAt": "2026-10-25T02:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-10",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "3",
+      "reviewedAt": "2026-10-26T02:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-11",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "2",
+      "reviewedAt": "2026-10-27T02:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-12",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "3",
+      "reviewedAt": "2026-10-28T02:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-13",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "2",
+      "reviewedAt": "2026-10-29T02:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-14",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "3",
+      "reviewedAt": "2026-10-30T02:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-15",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "2",
+      "reviewedAt": "2026-10-31T02:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-16",
+      "deckId": "deck-1",
+      "learnerId": "learner-1",
+      "wordId": "3",
+      "reviewedAt": "2026-11-01T02:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-17",
+      "deckId": "deck-1",
+      "learnerId": "learner-2",
+      "wordId": "2",
+      "reviewedAt": "2026-10-25T02:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-18",
+      "deckId": "deck-1",
+      "learnerId": "learner-2",
+      "wordId": "3",
+      "reviewedAt": "2026-10-26T02:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-19",
+      "deckId": "deck-1",
+      "learnerId": "learner-2",
+      "wordId": "4",
+      "reviewedAt": "2026-10-27T02:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-20",
+      "deckId": "deck-1",
+      "learnerId": "learner-2",
+      "wordId": "1",
+      "reviewedAt": "2026-10-28T02:10:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-21",
+      "deckId": "deck-1",
+      "learnerId": "learner-2",
+      "wordId": "2",
+      "reviewedAt": "2026-10-29T02:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-22",
+      "deckId": "deck-1",
+      "learnerId": "learner-2",
+      "wordId": "3",
+      "reviewedAt": "2026-10-30T02:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-23",
+      "deckId": "deck-1",
+      "learnerId": "learner-2",
+      "wordId": "4",
+      "reviewedAt": "2026-10-31T02:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-24",
+      "deckId": "deck-1",
+      "learnerId": "learner-2",
+      "wordId": "1",
+      "reviewedAt": "2026-11-01T02:10:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-25",
+      "deckId": "deck-1",
+      "learnerId": "learner-3",
+      "wordId": "3",
+      "reviewedAt": "2026-10-25T02:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-26",
+      "deckId": "deck-1",
+      "learnerId": "learner-3",
+      "wordId": "4",
+      "reviewedAt": "2026-10-26T02:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-27",
+      "deckId": "deck-1",
+      "learnerId": "learner-3",
+      "wordId": "1",
+      "reviewedAt": "2026-10-27T02:20:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-28",
+      "deckId": "deck-1",
+      "learnerId": "learner-3",
+      "wordId": "2",
+      "reviewedAt": "2026-10-28T02:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-29",
+      "deckId": "deck-1",
+      "learnerId": "learner-3",
+      "wordId": "3",
+      "reviewedAt": "2026-10-29T02:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-30",
+      "deckId": "deck-1",
+      "learnerId": "learner-3",
+      "wordId": "4",
+      "reviewedAt": "2026-10-30T02:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-31",
+      "deckId": "deck-1",
+      "learnerId": "learner-3",
+      "wordId": "1",
+      "reviewedAt": "2026-10-31T02:20:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-32",
+      "deckId": "deck-1",
+      "learnerId": "learner-3",
+      "wordId": "2",
+      "reviewedAt": "2026-11-01T02:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-33",
+      "deckId": "deck-1",
+      "learnerId": "learner-4",
+      "wordId": "4",
+      "reviewedAt": "2026-10-25T02:30:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-34",
+      "deckId": "deck-1",
+      "learnerId": "learner-4",
+      "wordId": "1",
+      "reviewedAt": "2026-10-26T02:30:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-35",
+      "deckId": "deck-1",
+      "learnerId": "learner-4",
+      "wordId": "2",
+      "reviewedAt": "2026-10-27T02:30:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-36",
+      "deckId": "deck-1",
+      "learnerId": "learner-4",
+      "wordId": "3",
+      "reviewedAt": "2026-10-28T02:30:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-37",
+      "deckId": "deck-1",
+      "learnerId": "learner-4",
+      "wordId": "4",
+      "reviewedAt": "2026-10-29T02:30:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-38",
+      "deckId": "deck-1",
+      "learnerId": "learner-4",
+      "wordId": "1",
+      "reviewedAt": "2026-10-30T02:30:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-39",
+      "deckId": "deck-1",
+      "learnerId": "learner-4",
+      "wordId": "2",
+      "reviewedAt": "2026-10-31T02:30:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-40",
+      "deckId": "deck-1",
+      "learnerId": "learner-4",
+      "wordId": "3",
+      "reviewedAt": "2026-11-01T02:30:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-41",
+      "deckId": "deck-2",
+      "learnerId": "learner-1",
+      "wordId": "6",
+      "reviewedAt": "2026-10-25T03:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-42",
+      "deckId": "deck-2",
+      "learnerId": "learner-1",
+      "wordId": "7",
+      "reviewedAt": "2026-10-26T03:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-43",
+      "deckId": "deck-2",
+      "learnerId": "learner-1",
+      "wordId": "8",
+      "reviewedAt": "2026-10-27T03:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-44",
+      "deckId": "deck-2",
+      "learnerId": "learner-1",
+      "wordId": "6",
+      "reviewedAt": "2026-10-28T03:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-45",
+      "deckId": "deck-2",
+      "learnerId": "learner-1",
+      "wordId": "7",
+      "reviewedAt": "2026-10-29T03:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-46",
+      "deckId": "deck-2",
+      "learnerId": "learner-1",
+      "wordId": "8",
+      "reviewedAt": "2026-10-30T03:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-47",
+      "deckId": "deck-2",
+      "learnerId": "learner-1",
+      "wordId": "6",
+      "reviewedAt": "2026-10-31T03:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-48",
+      "deckId": "deck-2",
+      "learnerId": "learner-1",
+      "wordId": "7",
+      "reviewedAt": "2026-11-01T03:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-49",
+      "deckId": "deck-2",
+      "learnerId": "learner-3",
+      "wordId": "6",
+      "reviewedAt": "2026-10-25T03:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-50",
+      "deckId": "deck-2",
+      "learnerId": "learner-3",
+      "wordId": "7",
+      "reviewedAt": "2026-10-26T03:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-51",
+      "deckId": "deck-2",
+      "learnerId": "learner-3",
+      "wordId": "8",
+      "reviewedAt": "2026-10-27T03:10:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-52",
+      "deckId": "deck-2",
+      "learnerId": "learner-3",
+      "wordId": "5",
+      "reviewedAt": "2026-10-28T03:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-53",
+      "deckId": "deck-2",
+      "learnerId": "learner-3",
+      "wordId": "6",
+      "reviewedAt": "2026-10-29T03:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-54",
+      "deckId": "deck-2",
+      "learnerId": "learner-3",
+      "wordId": "7",
+      "reviewedAt": "2026-10-30T03:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-55",
+      "deckId": "deck-2",
+      "learnerId": "learner-3",
+      "wordId": "8",
+      "reviewedAt": "2026-10-31T03:10:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-56",
+      "deckId": "deck-2",
+      "learnerId": "learner-3",
+      "wordId": "5",
+      "reviewedAt": "2026-11-01T03:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-57",
+      "deckId": "deck-2",
+      "learnerId": "learner-5",
+      "wordId": "7",
+      "reviewedAt": "2026-10-25T03:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-58",
+      "deckId": "deck-2",
+      "learnerId": "learner-5",
+      "wordId": "8",
+      "reviewedAt": "2026-10-26T03:20:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-59",
+      "deckId": "deck-2",
+      "learnerId": "learner-5",
+      "wordId": "5",
+      "reviewedAt": "2026-10-27T03:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-60",
+      "deckId": "deck-2",
+      "learnerId": "learner-5",
+      "wordId": "6",
+      "reviewedAt": "2026-10-28T03:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-61",
+      "deckId": "deck-2",
+      "learnerId": "learner-5",
+      "wordId": "7",
+      "reviewedAt": "2026-10-29T03:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-62",
+      "deckId": "deck-2",
+      "learnerId": "learner-5",
+      "wordId": "8",
+      "reviewedAt": "2026-10-30T03:20:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-63",
+      "deckId": "deck-2",
+      "learnerId": "learner-5",
+      "wordId": "5",
+      "reviewedAt": "2026-10-31T03:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-64",
+      "deckId": "deck-2",
+      "learnerId": "learner-5",
+      "wordId": "6",
+      "reviewedAt": "2026-11-01T03:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-65",
+      "deckId": "deck-3",
+      "learnerId": "learner-2",
+      "wordId": "9",
+      "reviewedAt": "2026-10-25T04:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-66",
+      "deckId": "deck-3",
+      "learnerId": "learner-2",
+      "wordId": "10",
+      "reviewedAt": "2026-10-26T04:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-67",
+      "deckId": "deck-3",
+      "learnerId": "learner-2",
+      "wordId": "11",
+      "reviewedAt": "2026-10-27T04:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-68",
+      "deckId": "deck-3",
+      "learnerId": "learner-2",
+      "wordId": "12",
+      "reviewedAt": "2026-10-28T04:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-69",
+      "deckId": "deck-3",
+      "learnerId": "learner-2",
+      "wordId": "9",
+      "reviewedAt": "2026-10-29T04:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-70",
+      "deckId": "deck-3",
+      "learnerId": "learner-2",
+      "wordId": "10",
+      "reviewedAt": "2026-10-30T04:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-71",
+      "deckId": "deck-3",
+      "learnerId": "learner-2",
+      "wordId": "11",
+      "reviewedAt": "2026-10-31T04:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-72",
+      "deckId": "deck-3",
+      "learnerId": "learner-2",
+      "wordId": "12",
+      "reviewedAt": "2026-11-01T04:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-73",
+      "deckId": "deck-3",
+      "learnerId": "learner-4",
+      "wordId": "10",
+      "reviewedAt": "2026-10-25T04:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-74",
+      "deckId": "deck-3",
+      "learnerId": "learner-4",
+      "wordId": "11",
+      "reviewedAt": "2026-10-26T04:10:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-75",
+      "deckId": "deck-3",
+      "learnerId": "learner-4",
+      "wordId": "12",
+      "reviewedAt": "2026-10-27T04:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-76",
+      "deckId": "deck-3",
+      "learnerId": "learner-4",
+      "wordId": "9",
+      "reviewedAt": "2026-10-28T04:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-77",
+      "deckId": "deck-3",
+      "learnerId": "learner-4",
+      "wordId": "10",
+      "reviewedAt": "2026-10-29T04:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-78",
+      "deckId": "deck-3",
+      "learnerId": "learner-4",
+      "wordId": "11",
+      "reviewedAt": "2026-10-30T04:10:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-79",
+      "deckId": "deck-3",
+      "learnerId": "learner-4",
+      "wordId": "12",
+      "reviewedAt": "2026-10-31T04:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-80",
+      "deckId": "deck-3",
+      "learnerId": "learner-4",
+      "wordId": "9",
+      "reviewedAt": "2026-11-01T04:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-81",
+      "deckId": "deck-3",
+      "learnerId": "learner-5",
+      "wordId": "11",
+      "reviewedAt": "2026-10-25T04:20:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-82",
+      "deckId": "deck-3",
+      "learnerId": "learner-5",
+      "wordId": "12",
+      "reviewedAt": "2026-10-26T04:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-83",
+      "deckId": "deck-3",
+      "learnerId": "learner-5",
+      "wordId": "9",
+      "reviewedAt": "2026-10-27T04:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-84",
+      "deckId": "deck-3",
+      "learnerId": "learner-5",
+      "wordId": "10",
+      "reviewedAt": "2026-10-28T04:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-85",
+      "deckId": "deck-3",
+      "learnerId": "learner-5",
+      "wordId": "11",
+      "reviewedAt": "2026-10-29T04:20:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-86",
+      "deckId": "deck-3",
+      "learnerId": "learner-5",
+      "wordId": "12",
+      "reviewedAt": "2026-10-30T04:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-87",
+      "deckId": "deck-3",
+      "learnerId": "learner-5",
+      "wordId": "9",
+      "reviewedAt": "2026-10-31T04:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-88",
+      "deckId": "deck-3",
+      "learnerId": "learner-5",
+      "wordId": "10",
+      "reviewedAt": "2026-11-01T04:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-89",
+      "deckId": "deck-4",
+      "learnerId": "learner-1",
+      "wordId": "7",
+      "reviewedAt": "2026-10-25T05:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-90",
+      "deckId": "deck-4",
+      "learnerId": "learner-1",
+      "wordId": "8",
+      "reviewedAt": "2026-10-26T05:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-91",
+      "deckId": "deck-4",
+      "learnerId": "learner-1",
+      "wordId": "7",
+      "reviewedAt": "2026-10-27T05:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-92",
+      "deckId": "deck-4",
+      "learnerId": "learner-1",
+      "wordId": "8",
+      "reviewedAt": "2026-10-28T05:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-93",
+      "deckId": "deck-4",
+      "learnerId": "learner-1",
+      "wordId": "7",
+      "reviewedAt": "2026-10-29T05:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-94",
+      "deckId": "deck-4",
+      "learnerId": "learner-1",
+      "wordId": "8",
+      "reviewedAt": "2026-10-30T05:00:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-95",
+      "deckId": "deck-4",
+      "learnerId": "learner-1",
+      "wordId": "7",
+      "reviewedAt": "2026-10-31T05:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-96",
+      "deckId": "deck-4",
+      "learnerId": "learner-1",
+      "wordId": "8",
+      "reviewedAt": "2026-11-01T05:00:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-97",
+      "deckId": "deck-4",
+      "learnerId": "learner-3",
+      "wordId": "8",
+      "reviewedAt": "2026-10-25T05:10:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-98",
+      "deckId": "deck-4",
+      "learnerId": "learner-3",
+      "wordId": "7",
+      "reviewedAt": "2026-10-26T05:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-99",
+      "deckId": "deck-4",
+      "learnerId": "learner-3",
+      "wordId": "8",
+      "reviewedAt": "2026-10-27T05:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-100",
+      "deckId": "deck-4",
+      "learnerId": "learner-3",
+      "wordId": "7",
+      "reviewedAt": "2026-10-28T05:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-101",
+      "deckId": "deck-4",
+      "learnerId": "learner-3",
+      "wordId": "8",
+      "reviewedAt": "2026-10-29T05:10:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-102",
+      "deckId": "deck-4",
+      "learnerId": "learner-3",
+      "wordId": "7",
+      "reviewedAt": "2026-10-30T05:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-103",
+      "deckId": "deck-4",
+      "learnerId": "learner-3",
+      "wordId": "8",
+      "reviewedAt": "2026-10-31T05:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-104",
+      "deckId": "deck-4",
+      "learnerId": "learner-3",
+      "wordId": "7",
+      "reviewedAt": "2026-11-01T05:10:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-105",
+      "deckId": "deck-4",
+      "learnerId": "learner-6",
+      "wordId": "7",
+      "reviewedAt": "2026-10-25T05:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-106",
+      "deckId": "deck-4",
+      "learnerId": "learner-6",
+      "wordId": "8",
+      "reviewedAt": "2026-10-26T05:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-107",
+      "deckId": "deck-4",
+      "learnerId": "learner-6",
+      "wordId": "7",
+      "reviewedAt": "2026-10-27T05:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-108",
+      "deckId": "deck-4",
+      "learnerId": "learner-6",
+      "wordId": "8",
+      "reviewedAt": "2026-10-28T05:20:00.000Z",
+      "result": "forgot"
+    },
+    {
+      "id": "review-109",
+      "deckId": "deck-4",
+      "learnerId": "learner-6",
+      "wordId": "7",
+      "reviewedAt": "2026-10-29T05:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-110",
+      "deckId": "deck-4",
+      "learnerId": "learner-6",
+      "wordId": "8",
+      "reviewedAt": "2026-10-30T05:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-111",
+      "deckId": "deck-4",
+      "learnerId": "learner-6",
+      "wordId": "7",
+      "reviewedAt": "2026-10-31T05:20:00.000Z",
+      "result": "remembered"
+    },
+    {
+      "id": "review-112",
+      "deckId": "deck-4",
+      "learnerId": "learner-6",
+      "wordId": "8",
+      "reviewedAt": "2026-11-01T05:20:00.000Z",
+      "result": "forgot"
+    }
   ],
   "learningProgress": [
-    { "id": "1", "wordId": "1", "status": "mastered", "isFavorite": true, "reviewCount": 5, "lastReviewedAt": "2026-10-24T02:00:00.000Z" },
-    { "id": "2", "wordId": "4", "status": "learning", "isFavorite": false, "reviewCount": 2, "lastReviewedAt": "2026-10-24T02:05:00.000Z" },
-    { "id": "3", "wordId": "5", "status": "learning", "isFavorite": true, "reviewCount": 1, "lastReviewedAt": "2026-10-24T02:10:00.000Z" }
+    {
+      "id": "1",
+      "learnerId": "learner-1",
+      "wordId": "1",
+      "status": "mastered",
+      "isFavorite": true,
+      "reviewCount": 5,
+      "lastReviewedAt": "2026-10-24T02:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "learnerId": "learner-1",
+      "wordId": "4",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-24T02:05:00.000Z"
+    },
+    {
+      "id": "3",
+      "learnerId": "learner-1",
+      "wordId": "5",
+      "status": "learning",
+      "isFavorite": true,
+      "reviewCount": 1,
+      "lastReviewedAt": "2026-10-24T02:10:00.000Z"
+    },
+    {
+      "id": "progress-1",
+      "learnerId": "learner-1",
+      "wordId": "2",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 4,
+      "lastReviewedAt": "2026-10-31T02:00:00.000Z"
+    },
+    {
+      "id": "progress-2",
+      "learnerId": "learner-1",
+      "wordId": "3",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 4,
+      "lastReviewedAt": "2026-11-01T02:00:00.000Z"
+    },
+    {
+      "id": "progress-3",
+      "learnerId": "learner-2",
+      "wordId": "2",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-29T02:10:00.000Z"
+    },
+    {
+      "id": "progress-4",
+      "learnerId": "learner-2",
+      "wordId": "3",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-30T02:10:00.000Z"
+    },
+    {
+      "id": "progress-5",
+      "learnerId": "learner-2",
+      "wordId": "4",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-31T02:10:00.000Z"
+    },
+    {
+      "id": "progress-6",
+      "learnerId": "learner-2",
+      "wordId": "1",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-11-01T02:10:00.000Z"
+    },
+    {
+      "id": "progress-7",
+      "learnerId": "learner-3",
+      "wordId": "3",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-29T02:20:00.000Z"
+    },
+    {
+      "id": "progress-8",
+      "learnerId": "learner-3",
+      "wordId": "4",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-30T02:20:00.000Z"
+    },
+    {
+      "id": "progress-9",
+      "learnerId": "learner-3",
+      "wordId": "1",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-31T02:20:00.000Z"
+    },
+    {
+      "id": "progress-10",
+      "learnerId": "learner-3",
+      "wordId": "2",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-11-01T02:20:00.000Z"
+    },
+    {
+      "id": "progress-11",
+      "learnerId": "learner-4",
+      "wordId": "4",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-29T02:30:00.000Z"
+    },
+    {
+      "id": "progress-12",
+      "learnerId": "learner-4",
+      "wordId": "1",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-30T02:30:00.000Z"
+    },
+    {
+      "id": "progress-13",
+      "learnerId": "learner-4",
+      "wordId": "2",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-31T02:30:00.000Z"
+    },
+    {
+      "id": "progress-14",
+      "learnerId": "learner-4",
+      "wordId": "3",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-11-01T02:30:00.000Z"
+    },
+    {
+      "id": "progress-15",
+      "learnerId": "learner-1",
+      "wordId": "6",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 3,
+      "lastReviewedAt": "2026-10-31T03:00:00.000Z"
+    },
+    {
+      "id": "progress-16",
+      "learnerId": "learner-1",
+      "wordId": "7",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 7,
+      "lastReviewedAt": "2026-11-01T03:00:00.000Z"
+    },
+    {
+      "id": "progress-17",
+      "learnerId": "learner-1",
+      "wordId": "8",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 6,
+      "lastReviewedAt": "2026-11-01T05:00:00.000Z"
+    },
+    {
+      "id": "progress-18",
+      "learnerId": "learner-3",
+      "wordId": "6",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-29T03:10:00.000Z"
+    },
+    {
+      "id": "progress-19",
+      "learnerId": "learner-3",
+      "wordId": "7",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 6,
+      "lastReviewedAt": "2026-11-01T05:10:00.000Z"
+    },
+    {
+      "id": "progress-20",
+      "learnerId": "learner-3",
+      "wordId": "8",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 6,
+      "lastReviewedAt": "2026-10-31T05:10:00.000Z"
+    },
+    {
+      "id": "progress-21",
+      "learnerId": "learner-3",
+      "wordId": "5",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-11-01T03:10:00.000Z"
+    },
+    {
+      "id": "progress-22",
+      "learnerId": "learner-5",
+      "wordId": "7",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-29T03:20:00.000Z"
+    },
+    {
+      "id": "progress-23",
+      "learnerId": "learner-5",
+      "wordId": "8",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-30T03:20:00.000Z"
+    },
+    {
+      "id": "progress-24",
+      "learnerId": "learner-5",
+      "wordId": "5",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-31T03:20:00.000Z"
+    },
+    {
+      "id": "progress-25",
+      "learnerId": "learner-5",
+      "wordId": "6",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-11-01T03:20:00.000Z"
+    },
+    {
+      "id": "progress-26",
+      "learnerId": "learner-2",
+      "wordId": "9",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-29T04:00:00.000Z"
+    },
+    {
+      "id": "progress-27",
+      "learnerId": "learner-2",
+      "wordId": "10",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-30T04:00:00.000Z"
+    },
+    {
+      "id": "progress-28",
+      "learnerId": "learner-2",
+      "wordId": "11",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-31T04:00:00.000Z"
+    },
+    {
+      "id": "progress-29",
+      "learnerId": "learner-2",
+      "wordId": "12",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-11-01T04:00:00.000Z"
+    },
+    {
+      "id": "progress-30",
+      "learnerId": "learner-4",
+      "wordId": "10",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-29T04:10:00.000Z"
+    },
+    {
+      "id": "progress-31",
+      "learnerId": "learner-4",
+      "wordId": "11",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-30T04:10:00.000Z"
+    },
+    {
+      "id": "progress-32",
+      "learnerId": "learner-4",
+      "wordId": "12",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-31T04:10:00.000Z"
+    },
+    {
+      "id": "progress-33",
+      "learnerId": "learner-4",
+      "wordId": "9",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-11-01T04:10:00.000Z"
+    },
+    {
+      "id": "progress-34",
+      "learnerId": "learner-5",
+      "wordId": "11",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-29T04:20:00.000Z"
+    },
+    {
+      "id": "progress-35",
+      "learnerId": "learner-5",
+      "wordId": "12",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-30T04:20:00.000Z"
+    },
+    {
+      "id": "progress-36",
+      "learnerId": "learner-5",
+      "wordId": "9",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-10-31T04:20:00.000Z"
+    },
+    {
+      "id": "progress-37",
+      "learnerId": "learner-5",
+      "wordId": "10",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 2,
+      "lastReviewedAt": "2026-11-01T04:20:00.000Z"
+    },
+    {
+      "id": "progress-38",
+      "learnerId": "learner-6",
+      "wordId": "7",
+      "status": "mastered",
+      "isFavorite": false,
+      "reviewCount": 4,
+      "lastReviewedAt": "2026-10-31T05:20:00.000Z"
+    },
+    {
+      "id": "progress-39",
+      "learnerId": "learner-6",
+      "wordId": "8",
+      "status": "learning",
+      "isFavorite": false,
+      "reviewCount": 4,
+      "lastReviewedAt": "2026-11-01T05:20:00.000Z"
+    }
+  ],
+  "questions": [
+    {
+      "id": "1",
+      "wordId": "1",
+      "prompt": "Từ apple có nghĩa là gì?",
+      "options": [
+        "quả cam",
+        "quả táo",
+        "quả chuối",
+        "quả nho"
+      ],
+      "correctAnswer": "quả táo",
+      "explanation": "Apple là danh từ, có nghĩa là quả táo."
+    },
+    {
+      "id": "2",
+      "wordId": "4",
+      "prompt": "Chọn từ thích hợp: This soup is ___.",
+      "options": [
+        "delicious",
+        "airport",
+        "student",
+        "ticket"
+      ],
+      "correctAnswer": "delicious",
+      "explanation": "Delicious là tính từ, có nghĩa là ngon."
+    },
+    {
+      "id": "3",
+      "wordId": "5",
+      "prompt": "Từ nào có nghĩa là sân bay?",
+      "options": [
+        "ticket",
+        "journey",
+        "airport",
+        "bread"
+      ],
+      "correctAnswer": "airport",
+      "explanation": "Airport có nghĩa là sân bay."
+    },
+    {
+      "id": "4",
+      "wordId": "8",
+      "prompt": "Từ explore có nghĩa là gì?",
+      "options": [
+        "cải thiện",
+        "mua vé",
+        "học tập",
+        "khám phá"
+      ],
+      "correctAnswer": "khám phá",
+      "explanation": "Explore là động từ, có nghĩa là khám phá."
+    },
+    {
+      "id": "5",
+      "wordId": "10",
+      "prompt": "Từ nào có nghĩa là bài tập về nhà?",
+      "options": [
+        "knowledge",
+        "homework",
+        "student",
+        "water"
+      ],
+      "correctAnswer": "homework",
+      "explanation": "Homework có nghĩa là bài tập về nhà."
+    },
+    {
+      "id": "6",
+      "wordId": "11",
+      "prompt": "Chọn từ thích hợp: Practice helps you ___ your English.",
+      "options": [
+        "improve",
+        "bread",
+        "ticket",
+        "knowledge"
+      ],
+      "correctAnswer": "improve",
+      "explanation": "Improve your English có nghĩa là cải thiện tiếng Anh của bạn."
+    }
   ],
   "quizAttempts": [
     {
@@ -37,9 +1681,301 @@
       "topicId": "1",
       "completedAt": "2026-10-24T02:15:00.000Z",
       "answers": [
-        { "questionId": "1", "prompt": "Từ apple có nghĩa là gì?", "selectedAnswer": "quả táo", "correctAnswer": "quả táo" },
-        { "questionId": "2", "prompt": "Chọn từ thích hợp: This soup is ___.", "selectedAnswer": "student", "correctAnswer": "delicious" }
+        {
+          "questionId": "1",
+          "prompt": "Từ apple có nghĩa là gì?",
+          "selectedAnswer": "quả táo",
+          "correctAnswer": "quả táo"
+        },
+        {
+          "questionId": "2",
+          "prompt": "Chọn từ thích hợp: This soup is ___.",
+          "selectedAnswer": "student",
+          "correctAnswer": "delicious"
+        }
+      ],
+      "learnerId": "learner-1",
+      "deckId": "deck-1"
+    },
+    {
+      "id": "attempt-2",
+      "topicId": "1",
+      "learnerId": "learner-2",
+      "deckId": "deck-1",
+      "completedAt": "2026-10-30T04:00:00.000Z",
+      "answers": [
+        {
+          "questionId": "1",
+          "prompt": "Từ apple có nghĩa là gì?",
+          "selectedAnswer": "quả cam",
+          "correctAnswer": "quả táo"
+        },
+        {
+          "questionId": "2",
+          "prompt": "Chọn từ thích hợp: This soup is ___.",
+          "selectedAnswer": "delicious",
+          "correctAnswer": "delicious"
+        }
+      ]
+    },
+    {
+      "id": "attempt-3",
+      "topicId": "2",
+      "learnerId": "learner-3",
+      "deckId": "deck-2",
+      "completedAt": "2026-10-31T04:00:00.000Z",
+      "answers": [
+        {
+          "questionId": "3",
+          "prompt": "Từ nào có nghĩa là sân bay?",
+          "selectedAnswer": "airport",
+          "correctAnswer": "airport"
+        },
+        {
+          "questionId": "4",
+          "prompt": "Từ explore có nghĩa là gì?",
+          "selectedAnswer": "khám phá",
+          "correctAnswer": "khám phá"
+        }
+      ]
+    },
+    {
+      "id": "attempt-4",
+      "topicId": "3",
+      "learnerId": "learner-4",
+      "deckId": "deck-3",
+      "completedAt": "2026-11-01T04:00:00.000Z",
+      "answers": [
+        {
+          "questionId": "5",
+          "prompt": "Từ nào có nghĩa là bài tập về nhà?",
+          "selectedAnswer": "homework",
+          "correctAnswer": "homework"
+        },
+        {
+          "questionId": "6",
+          "prompt": "Chọn từ thích hợp: Practice helps you ___ your English.",
+          "selectedAnswer": "bread",
+          "correctAnswer": "improve"
+        }
+      ]
+    },
+    {
+      "id": "attempt-5",
+      "topicId": "2",
+      "learnerId": "learner-3",
+      "deckId": "deck-4",
+      "completedAt": "2026-11-02T04:00:00.000Z",
+      "answers": [
+        {
+          "questionId": "4",
+          "prompt": "Từ explore có nghĩa là gì?",
+          "selectedAnswer": "cải thiện",
+          "correctAnswer": "khám phá"
+        }
+      ]
+    },
+    {
+      "id": "attempt-demo-travel",
+      "learnerId": "learner-1",
+      "assignmentId": "assignment-travel",
+      "deckId": "deck-2",
+      "topicId": "2",
+      "completedAt": "2026-11-04T02:00:00.000Z",
+      "answers": [
+        {
+          "questionId": "3",
+          "wordId": "5",
+          "prompt": "Từ nào có nghĩa là sân bay?",
+          "options": [
+            "ticket",
+            "journey",
+            "airport",
+            "bread"
+          ],
+          "selectedAnswer": "airport",
+          "correctAnswer": "airport",
+          "explanation": "Airport có nghĩa là sân bay."
+        },
+        {
+          "questionId": "4",
+          "wordId": "8",
+          "prompt": "Từ explore có nghĩa là gì?",
+          "options": [
+            "cải thiện",
+            "mua vé",
+            "học tập",
+            "khám phá"
+          ],
+          "selectedAnswer": "khám phá",
+          "correctAnswer": "khám phá",
+          "explanation": "Explore là động từ, có nghĩa là khám phá."
+        }
+      ]
+    },
+    {
+      "learnerId": "learner-1",
+      "deckId": "deck-1",
+      "topicId": "1",
+      "assignmentId": "assignment-food",
+      "completedAt": "2026-11-08T08:17:49.380Z",
+      "answers": [
+        {
+          "questionId": "1",
+          "wordId": "1",
+          "prompt": "Từ apple có nghĩa là gì?",
+          "options": [
+            "quả cam",
+            "quả táo",
+            "quả chuối",
+            "quả nho"
+          ],
+          "selectedAnswer": "quả táo",
+          "correctAnswer": "quả táo",
+          "explanation": "Apple là danh từ, có nghĩa là quả táo."
+        },
+        {
+          "questionId": "2",
+          "wordId": "4",
+          "prompt": "Chọn từ thích hợp: This soup is ___.",
+          "options": [
+            "delicious",
+            "airport",
+            "student",
+            "ticket"
+          ],
+          "selectedAnswer": "student",
+          "correctAnswer": "delicious",
+          "explanation": "Delicious là tính từ, có nghĩa là ngon."
+        }
+      ],
+      "id": "G-agNheiF_I"
+    },
+    {
+      "learnerId": "learner-1",
+      "deckId": "deck-1",
+      "topicId": "1",
+      "completedAt": "2026-11-08T08:18:43.102Z",
+      "answers": [
+        {
+          "questionId": "1",
+          "wordId": "1",
+          "prompt": "Từ apple có nghĩa là gì?",
+          "options": [
+            "quả cam",
+            "quả táo",
+            "quả chuối",
+            "quả nho"
+          ],
+          "selectedAnswer": "quả táo",
+          "correctAnswer": "quả táo",
+          "explanation": "Apple là danh từ, có nghĩa là quả táo."
+        },
+        {
+          "questionId": "2",
+          "wordId": "4",
+          "prompt": "Chọn từ thích hợp: This soup is ___.",
+          "options": [
+            "delicious",
+            "airport",
+            "student",
+            "ticket"
+          ],
+          "selectedAnswer": "delicious",
+          "correctAnswer": "delicious",
+          "explanation": "Delicious là tính từ, có nghĩa là ngon."
+        }
+      ],
+      "id": "P7oPQVpg1UA"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "teacher-1",
+      "role": "teacher",
+      "email": "teacher@wordquest.test",
+      "password": "123",
+      "displayName": "Giảng viên demo"
+    },
+    {
+      "id": "account-learner-1",
+      "role": "learner",
+      "email": "linh@gmail",
+      "password": "123",
+      "learnerId": "learner-1"
+    },
+    {
+      "id": "account-learner-2",
+      "role": "learner",
+      "email": "minh@wordquest.test",
+      "password": "123",
+      "learnerId": "learner-2"
+    },
+    {
+      "id": "account-learner-3",
+      "role": "learner",
+      "email": "an@wordquest.test",
+      "password": "123",
+      "learnerId": "learner-3"
+    },
+    {
+      "id": "account-learner-6",
+      "role": "learner",
+      "email": "nam@wordquest.test",
+      "password": "123",
+      "learnerId": "learner-6"
+    }
+  ],
+  "assignments": [
+    {
+      "teacherId": "teacher-1",
+      "status": "PUBLISHED",
+      "createdAt": "2026-11-03T01:00:00.000Z",
+      "dueAt": "2035-12-31T16:59:00.000Z",
+      "id": "assignment-food",
+      "title": "Food and Drinks · Quiz từ vựng",
+      "deckId": "deck-1",
+      "questionIds": [
+        "1",
+        "2"
+      ],
+      "learnerIds": [
+        "learner-1",
+        "learner-2"
+      ]
+    },
+    {
+      "teacherId": "teacher-1",
+      "status": "PUBLISHED",
+      "createdAt": "2026-11-03T01:00:00.000Z",
+      "dueAt": "2035-12-31T16:59:00.000Z",
+      "id": "assignment-travel",
+      "title": "Travel · Quiz từ vựng",
+      "deckId": "deck-2",
+      "questionIds": [
+        "3",
+        "4"
+      ],
+      "learnerIds": [
+        "learner-1"
+      ]
+    },
+    {
+      "teacherId": "teacher-1",
+      "status": "PUBLISHED",
+      "createdAt": "2026-11-03T01:00:00.000Z",
+      "dueAt": "2035-12-31T16:59:00.000Z",
+      "id": "assignment-education",
+      "title": "Education · Quiz từ vựng",
+      "deckId": "deck-3",
+      "questionIds": [
+        "5",
+        "6"
+      ],
+      "learnerIds": [
+        "learner-2"
       ]
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

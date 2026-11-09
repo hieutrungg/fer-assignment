@@ -1,77 +1,53 @@
-# Dữ liệu WordQuest
+# Dữ liệu WordQuest — luyện FER202
 
-Phiên bản đầu dành cho **một người học**, chưa có tài khoản hoặc phân quyền. Flashcard dùng trực tiếp dữ liệu `words`, không cần bảng riêng. Đây là dữ liệu mẫu để học React và JSON Server; không phải cấu trúc đề thi PE chính thức.
+`db.json` giữ nguyên các ID và trường của `topics`, `words` và `questions` hiện có. Phiên đăng nhập của người học dùng `accounts.learnerId` để xác định hồ sơ trong `learners`. Xem tài khoản và cách thử ở [README](README.md).
 
-## Chạy dự án
+Chạy `npm run server` và `npm start` trong hai terminal tại thư mục `ass`. API ở cổng 3001, React ở cổng 3000.
 
-Mở terminal trong thư mục `ass`:
+| Collection | Bản ghi | Ý nghĩa và liên kết |
+| --- | ---: | --- |
+| `topics` | 3 | Danh mục chủ đề. |
+| `words` | 12 | Từ, nghĩa, phiên âm, ví dụ và trình độ. `topicId` trỏ tới `topics.id`. |
+| `learners` | 6 | Hồ sơ người học; `status` là `ACTIVE` hoặc `INACTIVE`. |
+| `decks` | 4 ban đầu | Bộ flashcard có tên, mô tả, chủ đề tùy chọn và trạng thái `OPEN` hoặc `CLOSED`. `wordIds` trỏ tới ngân hàng từ; `members[]` lưu thành viên; `cards[]` và `cardProgress[]` lưu thẻ và tiến độ của bộ. |
+| `reviewLogs` | 112 | Một lần ôn: `learnerId`, `deckId`, `wordId`, `reviewedAt`, và kết quả `remembered` / `forgot`. |
+| `learningProgress` | 42 | Tiến độ theo cặp `learnerId + wordId`, gộp các lần ôn ở mọi bộ. |
+| `questions` | 6 | Ngân hàng câu hỏi; `wordId` trỏ tới từ được hỏi. |
+| `quizAttempts` | 6 | Bài quiz đã nộp; liên kết người học và bộ flashcard, kèm mảng `answers` lưu nội dung và đáp án lúc nộp. Chỉ quiz bài giao có `assignmentId`. |
+| `accounts` | 5 | Tài khoản demo. Vai trò là `teacher` hoặc `learner`. Tài khoản người học có `learnerId`. |
+| `assignments` | 3 | Bài giao có `teacherId`, `deckId`, `questionIds`, `learnerIds`, `dueAt` và trạng thái `DRAFT`, `PUBLISHED` hoặc `CLOSED`. |
 
-```powershell
-npm run server
+## Bài tập tương đương mẫu PE
+
+| Trong mẫu PE | Bài tập WordQuest |
+| --- | --- |
+| Lớp có `subjectId` | Hiện tên chủ đề của bộ flashcard qua `deck.topicId`. |
+| `classes.enrollments[]` nối tới sinh viên | Hiện tên thành viên qua `members[].learnerId`; đếm người còn tham gia và dùng PATCH để lưu mảng sau khi đổi trạng thái một thành viên. |
+| Điểm danh nối lớp và sinh viên | Lọc nhật ký theo bộ, người học, ngày và kết quả; ghép thêm tên từ từ `words`. |
+| Thống kê điểm danh | Tính số lượt nhớ, số lượt quên và tỷ lệ nhớ từ nhật ký; đối chiếu số lần ôn của từng từ với `learningProgress`. |
+
+Ví dụ với `deck-1`: lấy bộ, tra tên chủ đề, hiển thị thành viên và lọc nhật ký của `learner-1`:
+
+```http
+GET /decks/deck-1
+GET /topics/1
+GET /learners
+GET /reviewLogs
 ```
 
-Mở terminal thứ hai, cũng trong `ass`:
+Lọc `reviewLogs` theo `deckId === "deck-1"` và `learnerId === "learner-1"` trong React trước khi tính thống kê.
 
-```powershell
-npm start
-```
+## Quy ước khi ghi dữ liệu
 
-React chạy cổng 3000; API chạy cổng 3001. Dự án đang dùng JSON Server v1 beta, dùng ID kiểu chuỗi và lệnh chạy không cần `--watch`.
+- Mỗi phần tử trong `decks.cards[]` thuộc duy nhất bộ chứa nó. Thứ tự phần tử là thứ tự học mặc định. Thẻ riêng lưu `id`, `term`, `definition`. Thẻ lấy từ ngân hàng có `wordId` và có thể lưu nội dung riêng sau khi sửa. Bộ cũ chưa có `cards[]` đọc thẻ từ `wordIds` theo thứ tự cũ và dùng ID dạng `word-<wordId>` trong bộ.
+- Tiến độ Flashcard lưu trong `decks.cardProgress[]` theo cặp `learnerId + cardId`, gồm `status` (`unseen`, `learning`, `known`) và `starred`. Với thẻ cũ chưa có đánh giá riêng, trạng thái ban đầu lấy từ lượt ôn từ vựng gần nhất của đúng người học và bộ. Đánh giá nhớ/quên của thẻ liên kết tiếp tục đồng bộ nhật ký và tiến độ từ vựng. Chọn **Chưa học** chỉ đổi trạng thái trong bộ.
+- Xóa thẻ cập nhật mảng thẻ và tiến độ của bộ trong cùng một PATCH. Thẻ có từ được dùng bởi bài giao được bảo vệ. Xóa bộ có nhật ký từ vựng giữ một bản ghi chỉ để hiển thị tên trong lịch sử. Bài giao và kết quả quiz vẫn tham chiếu bộ đang tồn tại, nên chặn xóa bộ còn các liên kết đó.
 
-## Các collection
-
-| Collection | Mục đích | Trường liên kết |
-| --- | --- | --- |
-| `topics` | Danh sách chủ đề | `id` |
-| `words` | Nội dung từ vựng và flashcard | `topicId` → `topics.id` |
-| `questions` | Câu hỏi trắc nghiệm một đáp án đúng | `wordId` → `words.id` |
-| `learningProgress` | Trạng thái học và yêu thích từng từ | `wordId` → `words.id` |
-| `quizAttempts` | Lịch sử các lần nộp bài | `topicId` → `topics.id`, `answers[].questionId` → `questions.id` |
-
-Các trường tên `...Id` là liên kết do ứng dụng tự quản lý; JSON Server không tự kiểm tra khóa ngoại hoặc xử lý xóa dây chuyền.
-
-## Quy ước để code React
-
-- Tất cả `id`, `topicId`, `wordId`, `questionId` đều là chuỗi, ví dụ `"1"`. Khi tạo mới qua `POST`, bỏ trường `id` để JSON Server sinh ID.
-- `word` là từ tiếng Anh; `meaning` là nghĩa tiếng Việt; `phonetic` là phiên âm; `partOfSpeech` là loại từ. `level` nhận `A1`, `A2` hoặc `B1` trong dữ liệu mẫu.
-- `imageUrl` và `audioUrl` đang để `""` vì chưa có tài nguyên. Sau này đặt file trong `public/images` và `public/audio`, rồi lưu đường dẫn như `/images/apple.jpg`, `/audio/apple.mp3`. Khi chưa có URL, hiện placeholder ảnh và ẩn nút phát âm. Phiên âm không phải file âm thanh.
-- Mỗi từ có tối đa một bản ghi `learningProgress`. Chưa có bản ghi nghĩa là `new`, chưa yêu thích, số lần ôn bằng 0. `status` nhận `new`, `learning`, `mastered`; nút “Đã thuộc” đặt trạng thái `mastered` theo lựa chọn của người học.
-- Trước khi lưu tiến độ, tìm bản ghi bằng `wordId`; có rồi thì `PATCH`, chưa có thì `POST`. Chỉ thêm vào yêu thích không đồng nghĩa đã ôn từ. Khi ôn, tăng `reviewCount` và cập nhật `lastReviewedAt` bằng `new Date().toISOString()`.
-- Mỗi câu có 4 lựa chọn khác nhau; `correctAnswer` phải trùng đúng một giá trị trong `options`. Dùng `Radio` cho một đáp án; chấm bằng `selectedAnswer === correctAnswer`.
-- `quizAttempts.answers` lưu cả nội dung câu hỏi và đáp án tại lúc nộp để lịch sử vẫn đọc được khi sửa câu hỏi gốc. Tính số câu đúng bằng `answers.filter(a => a.selectedAnswer === a.correctAnswer).length`; phần trăm đúng bằng số đúng / số câu × 100, trả 0 nếu không có câu.
-- Tiến độ tổng = số từ có trạng thái `mastered` / tổng số từ × 100; trả 0 nếu chưa có từ. Không lưu thêm số tổng này vào database vì có thể tính từ dữ liệu hiện tại.
-- Quiz theo chủ đề: lấy `words` của chủ đề, rồi dùng `filter` lấy các `questions` có `wordId` thuộc các từ đó. Khi nộp, lưu một `quizAttempts`; quiz tổng hợp có thể dùng `topicId: null`.
-- Khi xóa từ, cần xử lý câu hỏi và tiến độ liên quan trong React. Với phiên bản mới học, nên chặn xóa chủ đề còn từ và chặn xóa từ còn câu hỏi; giữ lịch sử quiz vì đã lưu nội dung tại lúc nộp.
-
-## API để luyện tập
-
-Base URL: `http://localhost:3001`.
-
-| Thao tác | Method và đường dẫn | Kỹ năng |
-| --- | --- | --- |
-| Lấy chủ đề | `GET /topics` | `useEffect`, Axios, `map` |
-| Lấy từ theo chủ đề | `GET /words?topicId=1` | Route params, lọc dữ liệu |
-| Chi tiết từ | `GET /words/1` | Trang chi tiết |
-| Lọc trình độ | `GET /words?level=A1` | Select, controlled input |
-| Tạo từ | `POST /words` | Form, validation |
-| Sửa nghĩa | `PATCH /words/1` với `{ "meaning": "quả táo" }` | Cập nhật dữ liệu |
-| Xóa từ | `DELETE /words/12` | Xóa và cập nhật state |
-| Tìm tiến độ của từ | `GET /learningProgress?wordId=1` | Kết quả là mảng, có thể rỗng |
-| Từ yêu thích | `GET /learningProgress?isFavorite=true` | Ghép với `words` bằng `wordId` |
-| Lấy câu hỏi | `GET /questions` | `filter`, `includes`, state đáp án |
-| Lưu bài quiz | `POST /quizAttempts` | Mảng object, tính điểm |
-| Lịch sử mới nhất trước | `GET /quizAttempts?_sort=-completedAt` | Sắp xếp |
-
-Để học tìm kiếm trước, tải `words` rồi dùng `filter` với `word.toLowerCase().includes(keyword.toLowerCase())` trong React. Không cần thêm thư viện quản lý state lúc này.
-
-## Thứ tự triển khai gợi ý
-
-1. Danh sách từ: `Container`, `Row`, `Col`, `Card`, gọi API rồi `map`.
-2. Tìm kiếm và lọc: `Form.Control`, `Form.Select`, kết hợp keyword, chủ đề và trình độ.
-3. Chi tiết từ: React Router, `useParams`, hiển thị ví dụ và phiên âm.
-4. CRUD từ: `Form`, validation trường bắt buộc, `Modal`, `Button`, thông báo lỗi bằng `Alert`.
-5. Flashcard: state chỉ số từ hiện tại và trạng thái lật thẻ; sau đó lưu tiến độ bằng API.
-6. Quiz: chọn đáp án, nộp bài, tính điểm, lưu lịch sử.
-7. Dashboard: số từ đã thuộc, từ yêu thích, lịch sử quiz, `ProgressBar`.
-
-Khi học cùng AI, yêu cầu từng chức năng nhỏ: “Hướng dẫn tôi làm danh sách từ từ API, giải thích useEffect và useState, để tôi tự viết trước rồi review.” Sau mỗi chức năng, tự viết lại một lần không nhìn code và thử cả loading, lỗi API, dữ liệu rỗng, form sai. Đối chiếu format, thư viện và phiên bản JSON Server với đề mẫu hoặc hướng dẫn của giảng viên khi luyện PE.
+- Các ID là chuỗi. Khi thêm bản ghi bằng POST, để JSON Server tự sinh `id`. API cũ vẫn dùng `GET /topics`, `GET /words` và `GET /words/1`. Với JSON Server beta đang cài, query thường như `?topicId=1` hiểu `1` là số. Tiếp tục lọc trong React như cách bạn đang làm.
+- Từ mới cần `word`, `meaning`, `topicId` và `level` để dùng được danh sách và bộ lọc. Phiên âm, ví dụ, `imageUrl` và `audioUrl` có thể bổ sung sau. Khi URL ảnh hoặc âm thanh rỗng, bỏ qua phần hiển thị tương ứng.
+- Chỉ ghi đánh giá hoặc dấu sao khi bộ đang mở, người học đang hoạt động, còn tham gia bộ và thẻ vẫn nằm trong bộ. Giữ nhật ký từ vựng cũ khi đóng bộ hoặc thành viên rời đi.
+- Một cặp người học và từ có tối đa một bản ghi tiến độ. Sau khi ghi nhật ký, ứng dụng tính lại số lượt và trạng thái từ nhật ký của cặp đó, rồi POST tiến độ nếu chưa có hoặc PATCH nếu đã có. `lastReviewedAt` là thời điểm lượt mới nhất. Lượt mới nhất `remembered` tương ứng `mastered`, còn `forgot` tương ứng `learning`. `isFavorite` có thể được bật trước lần ôn đầu tiên.
+- Mỗi cặp `assignmentId + learnerId` có tối đa một lượt nộp bài. Sau lượt nộp đầu tiên, bài giao giữ nguyên bộ flashcard, câu hỏi và người nhận để bảo toàn kết quả.
+- Tính tỷ lệ nhớ bằng số lượt `remembered` chia tổng lượt trong phạm vi lọc; nếu không có lượt, hiển thị 0%. Tỷ lệ này khác với phần trăm số **từ** đã thuộc.
+- Lấy câu hỏi của một bộ bằng cách lọc `questions` theo `deck.wordIds`. Khi chấm bài, so sánh `selectedAnswer === correctAnswer` trên các đáp án đã lưu. `quizAttempts.topicId` giữ lại để lọc theo chủ đề và phải khớp với bộ.
+- JSON Server không kiểm tra khóa ngoại, tính tiến độ tự động hay xóa dây chuyền. Với bài tập CRUD, chặn xóa từ đang được dùng trong bộ, câu hỏi, nhật ký hoặc tiến độ để tránh liên kết bị đứt.

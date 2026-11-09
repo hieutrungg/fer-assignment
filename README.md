@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# WordQuest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ứng dụng demo FER202 để tra cứu từ vựng tiếng Anh, ôn flashcard và làm quiz. Dự án dùng React, React Router, React Bootstrap, Axios và JSON Server.
 
-## Available Scripts
+## Chạy ở máy local
 
-In the project directory, you can run:
+Mở hai terminal trong thư mục `ass`. Dùng Node.js 22 trở lên.
 
-### `npm start`
+```sh
+npm ci
+npm run server
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Trong terminal thứ hai:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```sh
+npm start
+```
 
-### `npm test`
+Mở [WordQuest](http://localhost:3000). JSON Server đọc và ghi `db.json` ở cổng 3001. Chạy `npm run build` để tạo bản production trong `build/`. Có thể đặt `REACT_APP_API_URL` trước khi chạy React nếu dùng địa chỉ API khác.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tài khoản demo
 
-### `npm run build`
+Trong cấu hình demo ban đầu, mật khẩu mẫu là `wordquest-demo`. Nếu bạn đã sửa tài khoản, dùng email và mật khẩu hiện tại trong `accounts` của `db.json`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Email | Vai trò | Hồ sơ |
+| --- | --- | --- |
+| `teacher@wordquest.test` | Giảng viên | Giảng viên demo |
+| `linh@wordquest.test` | Người học | Linh |
+| `minh@wordquest.test` | Người học | Minh |
+| `an@wordquest.test` | Người học | An |
+| `nam@wordquest.test` | Người học | Nam (ngừng hoạt động) |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Xác thực chỉ phục vụ demo. Route guard ở React không bảo vệ API JSON Server. API cho phép đọc và sửa dữ liệu trực tiếp, bao gồm tài khoản và đáp án mẫu. Chỉ dùng mật khẩu và dữ liệu giả. Phiên trong `localStorage` gồm ID, vai trò, tên hiển thị và `learnerId` nếu có.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Route chính
 
-### `npm run eject`
+| Route | Nội dung |
+| --- | --- |
+| `/login` | Đăng nhập |
+| `/words`, `/words/:id` | Tra cứu và chi tiết từ |
+| `/words/new`, `/words/:id/edit`, `/topics` | Giảng viên quản lý từ và chủ đề |
+| `/decks`, `/decks/:id` | Danh sách bộ và thành viên. Giảng viên có thể thêm, sửa, xóa thẻ hoặc xóa bộ tại trang chi tiết |
+| `/decks/new`, `/decks/:id/edit` | Giảng viên chỉnh tên, mô tả, thẻ từ ngân hàng và thành viên |
+| `/decks/:id/review`, `/decks/:id/quiz` | Người học ôn thẻ hoặc làm quiz tự luyện |
+| `/questions`, `/questions/new`, `/questions/:id/edit` | Ngân hàng câu hỏi của giảng viên |
+| `/assignments` | Danh sách bài giao theo vai trò |
+| `/assignments/new`, `/assignments/:id`, `/assignments/:id/edit` | Giảng viên soạn, giao, đóng bài và xem điểm |
+| `/assignments/:id/quiz` | Người nhận làm bài hoặc xem kết quả của mình |
+| `/progress`, `/progress/quiz/:id` | Tiến độ và lịch sử quiz cá nhân |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Thử hai luồng
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Để giữ dữ liệu mẫu sạch, chạy JSON Server với bản sao thay cho `npm run server` trong lúc thử. Trong PowerShell:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```powershell
+$wordQuestDemoDb = Join-Path $env:TEMP "wordquest-demo-db.json"
+Copy-Item db.json $wordQuestDemoDb
+npx --no-install json-server $wordQuestDemoDb --port 3001
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Đăng nhập giảng viên. Tại **Từ vựng**, thêm từ vào chủ đề **Food and Drinks**. Tạo bộ chứa từ đó, sửa bộ và đặt Linh thành **Đang tham gia**. Tạo câu hỏi với bốn lựa chọn và một đáp án đúng. Tạo bài giao từ bộ này, chọn câu hỏi, Linh và hạn tương lai. Có thể **Lưu nháp**, mở lại rồi **Giao bài**. Mở chi tiết để xem Linh chưa nộp. Sau khi Linh nộp ở bước 2, quay lại để xem điểm và kiểm tra bộ, câu hỏi, người nhận đã bị khóa khi sửa bài.
+2. Đăng nhập Linh. Trong dữ liệu mẫu ban đầu, mục **Bài giao** có bài Food chưa nộp, bài Travel đã nộp và bài vừa giao ở bước 1. Bài Education của Minh không xuất hiện. Mở bộ Food hoặc bộ mới đã tham gia, bấm vào thẻ để lật và thử đổi đánh giá. Mở bài chưa nộp, thử nộp khi còn thiếu đáp án, trả lời đủ rồi nộp. Tải lại URL quiz để thấy kết quả đã lưu và không có nút nộp. Vào **Tiến độ** để kiểm tra lịch sử và lọc lượt ôn. Thử mở `/questions/new` bằng tài khoản Linh để kiểm tra chuyển hướng. Đăng xuất rồi mở `/progress` để kiểm tra yêu cầu đăng nhập.
 
-## Learn More
+Hạn bài mẫu là `2035-12-31T16:59:00.000Z`, tương ứng 23:59 giờ Việt Nam ngày 31/12/2035. Giảng viên có thể sửa hạn của bài đang mở, hoặc chỉnh `assignments[].dueAt` bằng chuỗi ISO trong bản sao dữ liệu khi tắt JSON Server. Đặt hạn trong quá khứ để thử trạng thái **Quá hạn** và dùng lại bản gốc khi muốn đặt lại demo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Thử riêng Flashcard
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Giảng viên tạo bộ với tên và mô tả, chọn một người học tham gia, rồi vào chi tiết bộ để thêm vài thẻ bằng **Thuật ngữ** và **Định nghĩa**. Có thể tạo bộ rỗng hoặc chọn thẻ từ ngân hàng từ vựng nếu đã chọn chủ đề.
+2. Người học mở **Ôn flashcard**. Bấm thẻ để lật, chọn **Chưa học**, **Chưa thuộc** hoặc **Đã thuộc**, rồi dùng **Trước** và **Tiếp** để di chuyển. Ở thẻ cuối, **Kết thúc lượt** cho biết còn bao nhiêu thẻ cần học. **Ôn thẻ cần học** lấy cả thẻ chưa học và chưa thuộc.
+3. Thử đánh dấu sao, bật **Chỉ thẻ có sao**, **Trộn thẻ** và **Định nghĩa trước**. **Học lại từ đầu** giữ nguyên thứ tự của lượt và tiến độ đã lưu. Tải lại trang sẽ khôi phục đánh giá và sao, rồi mở lại từ thẻ đầu với tùy chọn mặc định.
+4. Giảng viên sửa một thẻ đã học rồi mở lại lượt học để kiểm tra tiến độ vẫn giữ theo ID. Xóa thẻ sẽ xóa tiến độ và sao của thẻ đó. Có thể xóa bộ chưa có bài giao hoặc kết quả quiz. Nếu bộ có nhật ký từ vựng, ứng dụng giữ ID và tên bộ cho lịch sử và xóa thẻ, thành viên cùng tiến độ thẻ.
 
-### Code Splitting
+Chạy `npm test -- --watchAll=false --runInBand` để kiểm tra dữ liệu bộ cũ, tiến độ, thứ tự thẻ và cách tính tỷ lệ.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Giới hạn demo
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Kiểm tra tham chiếu và chống ghi trùng chạy trong ứng dụng. Các tab cùng origin dùng Web Locks nếu trình duyệt hỗ trợ. Thiết bị hoặc origin khác có thể ghi đồng thời vì JSON Server không có ràng buộc duy nhất hay giao dịch.
+- Nếu đã ghi nhật ký ôn nhưng cập nhật tiến độ lỗi, nút **Thử lưu lại** dùng lại mã lượt ôn. Trang tiến độ cũng tính từ nhật ký đã lưu và lần ôn thành công tiếp theo của từ đó đồng bộ bản ghi tiến độ.
+- Trình duyệt dùng giờ trên thiết bị để hiển thị ngày, lọc nhật ký và kiểm tra hạn nộp.

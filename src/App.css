@@ -1,0 +1,124 @@
+:root {
+  --bs-body-color: #202a36;
+  --bs-body-bg: #f6f8fb;
+  --wq-surface: #fff;
+  --wq-line: #dce2eb;
+  --wq-accent: #0a58ca;
+}
+
+body { overflow-wrap: anywhere; }
+::selection { background: #d9e8ff; color: #163662; }
+
+.app-nav {
+  background: var(--wq-surface);
+  border-bottom: 1px solid var(--wq-line);
+  min-height: 4rem;
+}
+
+.brand {
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -.025em;
+}
+
+.brand svg { color: var(--wq-accent); }
+.app-nav .nav-link { font-weight: 500; }
+.app-nav .nav-link.active { color: var(--wq-accent); text-decoration: underline; text-underline-offset: .35em; }
+.app-main { padding-top: 2rem; padding-bottom: 3rem; }
+.page-heading { margin-bottom: 1.5rem; }
+h1 { font-size: 2rem; font-weight: 700; letter-spacing: -.025em; }
+h2, h3 { letter-spacing: -.012em; }
+.back-link { display: inline-block; margin-bottom: .75rem; }
+
+.surface, .card, .list-group-item {
+  background: var(--wq-surface);
+  border-color: var(--wq-line);
+}
+
+.surface { border: 1px solid var(--wq-line); border-radius: .75rem; }
+.form-control, .form-select, .modal-content { background-color: var(--wq-surface); }
+.form-panel { max-width: 48rem; padding: 1.25rem; }
+.quiz-panel, .study-panel { max-width: 48rem; }
+.item-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; }
+.item-row > div:first-child { min-width: 0; }
+.choice-list { display: grid; gap: .625rem; }
+.choice-list label, .form-check-input { cursor: pointer; }
+.member-row { border-bottom: 1px solid var(--wq-line); padding-bottom: .5rem; }
+.member-row .form-select { width: auto; max-width: 100%; }
+.option-editor { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 1rem; }
+.option-editor > .form-check { margin-bottom: 1.5rem; }
+.empty-state { border: 1px solid var(--wq-line); border-radius: .5rem; padding: 1rem; }
+.card-definition, .study-face-text { white-space: pre-wrap; }
+.study-settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.25rem;
+  padding-block: .75rem;
+  margin-bottom: 1rem;
+  border-block: 1px solid var(--wq-line);
+}
+.study-settings .form-check { margin-bottom: 0; }
+.study-card {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: .75rem;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  perspective: 70rem;
+}
+.study-card:focus-visible { outline: 2px solid var(--wq-accent); outline-offset: 3px; }
+.study-card:hover .study-face { border-color: var(--wq-accent); }
+.study-card-inner {
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 240ms ease-out;
+}
+.study-card-inner.is-flipped { transform: rotateY(180deg); }
+.study-face {
+  grid-area: 1 / 1;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: .5rem;
+  min-height: 14rem;
+  padding: 1.25rem;
+  backface-visibility: hidden;
+}
+.study-face-back { transform: rotateY(180deg); }
+.study-face-text { font-size: 2rem; font-weight: 700; }
+.study-flip-hint { color: var(--wq-accent); }
+.study-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .study-card-inner { transition: none; }
+}
+.progress { height: .5rem; }
+.stat-count { color: var(--wq-accent); margin-left: .35rem; font-variant-numeric: tabular-nums; }
+.word-link { display: inline-block; padding: .25rem .5rem; background: var(--wq-surface); border: 1px solid var(--wq-line); border-radius: .375rem; }
+.table th, .table td { padding: .625rem .875rem; --bs-table-bg: var(--wq-surface); }
+.table { font-variant-numeric: tabular-nums; }
+.table time { overflow-wrap: normal; }
+.question-outline li { padding-bottom: .5rem; }
+
+.login-shell { display: grid; align-items: start; justify-items: center; padding-block: 3rem; }
+.login-panel { width: min(100%, 29rem); padding: 1.75rem; }
+.demo-note { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--wq-line); }
+.demo-note code { color: inherit; }
+
+@media (max-width: 991px) {
+  .nav-account { margin-block: .5rem; }
+}
+
+@media (max-width: 575px) {
+  .app-main { padding-top: 1.25rem; }
+  .login-shell { padding-block: 1.25rem; }
+  .login-panel { padding: 1.25rem; }
+  h1 { font-size: 1.75rem; }
+  .study-face-text { font-size: 1.5rem; }
+  .table th, .table td { padding: .5rem; }
+}
